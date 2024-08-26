@@ -12,7 +12,7 @@ import java.util.List;
 public class DaoRepository {
 
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     public List<Person> getPersonsByCity(String city) {
         Query query = entityManager.createQuery("SELECT p FROM Person p WHERE p.cityOfLiving = :city", Person.class);
