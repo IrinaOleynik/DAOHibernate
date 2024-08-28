@@ -18,6 +18,11 @@ public class DaoController {
         this.daoRepository = daoRepository;
     }
 
+    @GetMapping("/persons")
+    public String personsHomePage(){
+        return "Homepage";
+    }
+
     @GetMapping("/persons/by-city")
     public ResponseEntity<List<Person>> getByCity(@RequestParam String city) {
         List<Person> persons = daoRepository.findByCityOfLiving(city);
